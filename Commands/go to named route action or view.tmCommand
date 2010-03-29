@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require "#{ENV['TM_BUNDLE_SUPPORT']}/lib/rails_routes.rb"
+
+controller, action = setup
+
+files = find_views controller, action
+files &lt;&lt; find_controller(controller)
+
+file = choose(files)
+line_no = find_line_number file, action
+
+TextMate.go_to :file =&gt; file, :line =&gt; line_no</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@p</string>
+	<key>name</key>
+	<string>go to named route action or view</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.ruby, text.html.ruby, text.haml</string>
+	<key>uuid</key>
+	<string>C33AD9FF-6081-4767-A5E1-A0949A2B7942</string>
+</dict>
+</plist>

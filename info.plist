@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Rails Routes</string>
+	<key>ordering</key>
+	<array>
+		<string>C33AD9FF-6081-4767-A5E1-A0949A2B7942</string>
+		<string>323C2277-232B-4E16-874F-346A537FF0FC</string>
+		<string>5C05CF34-366E-432B-8379-4456FE270207</string>
+	</array>
+	<key>uuid</key>
+	<string>E51E8EC7-47E8-432E-B2E3-0D60F3C15C3F</string>
+</dict>
+</plist>
