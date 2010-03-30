@@ -1,0 +1,46 @@
+This is a {TextMate}[http://macromates.com/] bundle that provides a couple of functions for working with {Ruby on Rails}[http://rubyonrails.org/]' {named routes}[http://guides.rubyonrails.org/routing.html]. The functions currently are:
+
+* go to named route action or view -- <code>Cmd-P</code>
+* go to named route action -- <code>Ctrl-Cmd-P</code>
+* go to named route view -- <code>Opt-Cmd-P</code>
+
+= Usage
+
+If the selected text (or word under cursor) looks like a named route expression in your controller or view code, e.g:
+
+  edit_user_path(@user)
+  root_path
+  post_comment_url(@post, @comment)
+  new_publisher_magazine_photo_url
+
+you can press <code>Cmd-P</code> to go to the action or view associated with this route (the choices are presented in a popup menu). You can also press <code>Opt-Cmd-P</code> to go directly to the view file or <code>Ctrl-Cmd-P</code> to go directly to the action.
+
+= Installation
+
+  mkdir -p ~/Library/Application\ Support/TextMate/Bundles
+  cd ~/Library/Application\ Support/TextMate/Bundles
+  git clone git://github.com/szeryf/rails-routes.tmbundle.git
+  osascript -e 'tell app "TextMate" to reload bundles'
+
+= Troubleshooting
+
+Normally when you press any of the shortcuts, you should see a progress bar saying "Loading routes.rb" for a moment (exactly how long depends on your project and <code>routes.rb</code> size). If it says "Loading environment.rb" instead and stays considerably longer, there may be a problem with your <code>routes.rb</code> depending on something that is loaded by <code>environment.rb</code> file (in one of my projects it was a config class). So, if you want to speed up these operations, make sure that your <code>routes.rb</code> can be <code>require</code>d without <code>require</code>ing <code>environment.rb</code> first (which takes notoriously long in most Rails projects).
+
+To check this, run <code>irb</code> (NOT <code>script/console</code>) in your project directory and try issuing the following:
+
+  >> require 'config/boot.rb'
+  => true
+  >> require 'action_controller'
+  => true
+  >> require 'config/routes.rb'
+  => []
+
+If this goes without errors, you should be good to go. If you get some errors, there is something missing for <code>routes.rb</code>. You'll have to examine those errors and fix them if possible.
+
+= To do
+
+* a command to open <code>routes.rb</code> (I know it's usually just a couple of keystrokes: <code>Cmd-T, r, o, u, Enter</code>, but I open it so often it would be nice to just press e.g. Ctrl-Cmd-R)
+* a command to go to route definition inside <code>routes.rb</code>
+* action names in menu for controller
+* separate menu sections for views, controller, route definitions
+* make it faster (somehow cache the routes?)
