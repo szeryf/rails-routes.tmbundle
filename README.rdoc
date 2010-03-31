@@ -37,6 +37,10 @@ To check this, run <code>irb</code> (NOT <code>script/console</code>) in your pr
 
 If this goes without errors, you should be good to go. If you get some errors, there is something missing for <code>routes.rb</code>. You'll have to examine those errors and fix them if possible.
 
+= Compatibility
+
+Tested with Rails 2.3.5. Should work with any Rails 2.x version (if it doesn't let me know). May not work with Rails 3 (I haven't tested it) but patches welcome.
+
 = To do
 
 * a command to open <code>routes.rb</code> (I know it's usually just a couple of keystrokes: <code>Cmd-T, r, o, u, Enter</code>, but I open it so often it would be nice to just press e.g. Ctrl-Cmd-R)
