@@ -3,6 +3,7 @@ This is a {TextMate}[http://macromates.com/] bundle that provides a couple of fu
 * go to named route action or view -- <code>Cmd-P</code>
 * go to named route action -- <code>Ctrl-Cmd-P</code>
 * go to named route view -- <code>Opt-Cmd-P</code>
+* go to <code>routes.rb</code> -- <code>Ctrl-Opt-Cmd-R</code>
 
 = Usage
 
@@ -43,7 +44,6 @@ Tested with Rails 2.3.5. Should work with any Rails 2.x version (if it doesn't l
 
 = To do
 
-* a command to open <code>routes.rb</code> (I know it's usually just a couple of keystrokes: <code>Cmd-T, r, o, u, Enter</code>, but I open it so often it would be nice to just press e.g. Ctrl-Cmd-R)
 * a command to go to route definition inside <code>routes.rb</code>
 * action names in menu for controller
 * separate menu sections for views, controller, route definitions
